@@ -1,4 +1,4 @@
-(mapcar 'straight-use-package
+(mapcar 'straight-use-package-lazy
 	'(
 	  ;; Evil mode! Vim keybindings
 	  (evil :type git :host github :commit 1b3db6349d04adfc68f707b0edd800f5ab3cb374)
