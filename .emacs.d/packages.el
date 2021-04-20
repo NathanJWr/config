@@ -25,5 +25,8 @@
 
 	  ;; Better package configuration
 	  (use-package :type git :host github :commit 560ea32eaf1e16ac5d673496e5d52d63dfeec23a)
+
+	  ;; The best git frontend
+	  (magit :type git :host github :commit c7364e169648f454dc73fe50596d827fbf1f0fb7)
 	  )
 	)
