@@ -2,4 +2,5 @@
 (load "~/.emacs.d/setup.el")
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/config.el")
+(load "~/.emacs.d/common.el")
 (setq gc-cons-threshold (* 2 1000 1000))
