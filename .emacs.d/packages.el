@@ -17,5 +17,13 @@
 
 	  ;; Center text in writing modes
 	  (olivetti :type git :host github :commit 61d26644fd9dd2d45b80b9b82f5f930ed17530d0)
+
+	  ;; Better completion framework, search, etc.
+	  (ivy :type git :host github :commit 471d644d6bdd7d5dc6ca4efb405e6a6389dff245)
+
+	  (counsel :type git :host github :commit 471d644d6bdd7d5dc6ca4efb405e6a6389dff245)
+
+	  ;; Better package configuration
+	  (use-package :type git :host github :commit 560ea32eaf1e16ac5d673496e5d52d63dfeec23a)
 	  )
 	)
