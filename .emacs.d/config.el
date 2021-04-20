@@ -12,6 +12,9 @@
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
 
+;; Set up vim-like keybindings. We need to set evil-want-keybinding to
+;; nil for evil-collection integration. We also want to set the undo
+;; system so that u and r in normal mode actually do someting.
 (use-package evil
   :init
   (setq evil-want-keybinding nil
@@ -19,11 +22,13 @@
   :config
   (evil-mode 1))
 
+;; For now we're just initializing the whole of evil-collection for
+;; better vim integration with the rest of emacs.
 (use-package evil-collection
   :init
   (evil-collection-init))
 
-;; Ivy
+;; Ivy completion framework
 (use-package ivy
   :init
   (ivy-mode)
@@ -31,6 +36,9 @@
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t))
 
+;; Replace a lot of the default bindings with counsel specific
+;; commands. With this we get completion buffers on basic stuff like
+;; find-file which is awesome!
 (use-package counsel
   :bind* ; load when pressed
   (("M-x"     . counsel-M-x)
