@@ -9,6 +9,15 @@
 (defun display-startup-echo-area-message ()
   (message (concat "Init time: " (emacs-init-time))))
 
+(use-package epa-file
+  :init
+  (epa-file-enable)
+  :config
+  (setf epg-pinentry-mode 'loopback)
+  (setq epa-file-secret-keys 1)
+  (setq epa-file-encrypt-to '("nathan@nathanielwright.xyz"))
+  (load "~/.emacs.d/my-secrets.el.gpg"))
+
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
 
@@ -50,10 +59,19 @@
    ("C-c /"   . counsel-ag)       ; Use ag for regexp
    ("C-x l"   . counsel-locate)
    ("C-x C-f" . counsel-find-file)
-   ("C-h f"  .  counsel-describe-function)
-   ("C-h v"  .  counsel-describe-variable)
+   ("C-h f"   . counsel-describe-function)
+   ("C-h v"   . counsel-describe-variable)
    ("<f1> l"  . counsel-find-library)
    ("<f2> i"  . counsel-info-lookup-symbol)
    ("<f2> u"  . counsel-unicode-char)
    ("C-c C-r" . ivy-resume)))     ; Resume last Ivy-based completion
 
+(defun my-prog-mode-config ()
+  (setq show-trailing-whitespace t)
+  (display-line-numbers-mode))
+(add-hook 'prog-mode-hook #'my-prog-mode-config)
+
+(use-package org
+  :defer t
+  :config
+  (set-face-attribute 'org-headline-done nil :strike-through t))
