@@ -4,6 +4,10 @@
 
 (tool-bar-mode -1)   ;; Don't show the toolbar
 (scroll-bar-mode -1) ;; Don't show the scroll bar
+(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 150)
+(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 150)
+(set-face-attribute 'variable-pitch nil :family "Spectral" :height 180)
+
 
 ;; Replace the startup message with logging the initialization time
 (defun display-startup-echo-area-message ()
