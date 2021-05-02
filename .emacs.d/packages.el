@@ -1,4 +1,4 @@
-(mapcar 'straight-use-package-lazy
+(mapcar 'straight-use-package
 	'(
 	  ;; Evil mode! Vim keybindings
 	  (evil :type git :host github :commit 1b3db6349d04adfc68f707b0edd800f5ab3cb374)
@@ -29,7 +29,10 @@
 	  ;; The best git frontend
 	  (magit :type git :host github :commit c7364e169648f454dc73fe50596d827fbf1f0fb7)
 
-	  
-	  
+	  ;; Better editing for .js and .jsx files
+	  (web-mode :type git :host github :commit 8ef47935d638902ba35a557cae5edd6ab6ab1346)
+
+	  ;; Org Roam for a nice note taking experience
+	  (org-roam :type git :host github :commit 9065f6a999b98d4b495e3d8fa1fa4424eddd25a8)
 	  )
 	)

@@ -3,3 +3,8 @@ straight/
 url/
 *~
 server/
+.DS_Store
+bookmarks
+*.db
+recentf
+transient/

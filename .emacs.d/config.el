@@ -9,6 +9,8 @@
 (defun display-startup-echo-area-message ()
   (message (concat "Init time: " (emacs-init-time))))
 
+;; Load up gpg credentials for file decrypting/encrypting when
+;; the extension is '.gpg'
 (use-package epa-file
   :init
   (epa-file-enable)
@@ -17,6 +19,16 @@
   (setq epa-file-secret-keys 1)
   (setq epa-file-encrypt-to '("nathan@nathanielwright.xyz"))
   (load "~/.emacs.d/my-secrets.el.gpg"))
+
+;; Put all backup files in one place
+(setq backup-directory-alist `(("." . "~/.saves")))
+;; Always make backup files by copying
+(setq backup-by-copying t)
+
+(setq delete-old-versions t
+      kept-new-versions 6 ;; Keep 6 new versions when a new numbered backup is made
+      kept-old-versions 2 ;; Keep 2 old versions when a new numbered backup is made
+      version-control t)  ;; Make numeric backup versions
 
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
@@ -75,3 +87,24 @@
   :defer t
   :config
   (set-face-attribute 'org-headline-done nil :strike-through t))
+
+(use-package web-mode
+  :mode "\\.jsx?$"
+  :config
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+  (setq web-mode-markup-indent-offset 4))
+
+(use-package org-roam
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory (file-truename "~/Documents/notes"))
+  :config
+  (setq org-roam-encrypt-files t)
+  :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
+              :map org-mode-map
+              (("C-c n i" . org-roam-insert))
+              (("C-c n I" . org-roam-insert-immediate))))
