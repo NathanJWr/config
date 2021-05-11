@@ -31,8 +31,5 @@
 
 	  ;; Better editing for .js and .jsx files
 	  (web-mode :type git :host github :commit 8ef47935d638902ba35a557cae5edd6ab6ab1346)
-
-	  ;; Org Roam for a nice note taking experience
-	  (org-roam :type git :host github :commit 9065f6a999b98d4b495e3d8fa1fa4424eddd25a8)
 	  )
 	)
