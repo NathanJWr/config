@@ -1,14 +1,5 @@
 (mapcar 'straight-use-package
 	'(
-	  ;; Evil mode! Vim keybindings
-	  (evil :type git :host github :commit 1b3db6349d04adfc68f707b0edd800f5ab3cb374)
-
-	  ;; Undo package used for evil mode's C-r (redo)
-	  (undo-fu :type git :host gitlab :commit e0ad06b5)
-
-	  ;; Evil bindings for a larger subset of applications like the calendar
-	  (evil-collection :type git :host github :commit b6025cf)
-
 	  ;; Good package of themes
 	  (doom-themes :type git :host github :commit 4199e74db170200995ee8dfbb55ffae004d6e219)
 
@@ -31,5 +22,8 @@
 
 	  ;; Better editing for .js and .jsx files
 	  (web-mode :type git :host github :commit 8ef47935d638902ba35a557cae5edd6ab6ab1346)
+
+	  ;; tab bar
+	  (centaur-tabs :type git :host github :commit 9c7c936e4e1de6f4f4095d70e43c9ae738d05086)
 	  )
 	)

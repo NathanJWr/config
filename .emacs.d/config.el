@@ -6,9 +6,10 @@
 (tool-bar-mode -1)   ;; Don't show the toolbar
 (scroll-bar-mode -1) ;; Don't show the scroll bar
 
+;; Set fonts
 (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 150)
-(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 150)
-(set-face-attribute 'variable-pitch nil :family "Spectral" :height 180)
+(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 150) ;; Set the monospace font
+(set-face-attribute 'variable-pitch nil :family "Spectral" :height 180)      ;; Set the serif font
 
 
 ;; Replace the startup message with logging the initialization time
@@ -35,22 +36,6 @@
 
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
-
-;; Set up vim-like keybindings. We need to set evil-want-keybinding to
-;; nil for evil-collection integration. We also want to set the undo
-;; system so that u and r in normal mode actually do someting.
-;; (use-package evil
-;;   :init
-;;   (setq evil-want-keybinding nil
-;; 	evil-undo-system 'undo-fu)
-;;   :config
-;;   (evil-mode 1))
-
-;; ;; For now we're just initializing the whole of evil-collection for
-;; ;; better vim integration with the rest of emacs.
-;; (use-package evil-collection
-;;   :init
-;;   (evil-collection-init))
 
 ;; Ivy completion framework
 (use-package ivy
@@ -103,3 +88,11 @@
   (setq ispell-local-dictionary-alist
       '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
   (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist))
+
+(use-package centaur-tabs
+  :demand ;; Load this package at startup
+  :config
+  (centaur-tabs-mode t)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
