@@ -25,5 +25,11 @@
 
 	  ;; tab bar
 	  (centaur-tabs :type git :host github :commit 9c7c936e4e1de6f4f4095d70e43c9ae738d05086)
+
+	  ;; Project management
+	  (projectile :type git :host github :commit 4126799d94b6a9a4db22976d2dd6625323221359)
+
+	  ;; Easier hunt and pecking for command key-combos
+	  (which-key :type git :host github :commit 5fb30301cb3b4fca5a0e1ce8ec1ef59290b79199)
 	  )
 	)
