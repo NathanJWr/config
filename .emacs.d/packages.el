@@ -31,5 +31,8 @@
 
 	  ;; Easier hunt and pecking for command key-combos
 	  (which-key :type git :host github :commit 5fb30301cb3b4fca5a0e1ce8ec1ef59290b79199)
+
+	  ;; Format c/c++
+	  (clang-format)
 	  )
 	)

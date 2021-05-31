@@ -7,9 +7,9 @@
 (scroll-bar-mode -1) ;; Don't show the scroll bar
 
 ;; Set fonts
-(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 150)
-(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 150) ;; Set the monospace font
-(set-face-attribute 'variable-pitch nil :family "Spectral" :height 180)      ;; Set the serif font
+(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 110)
+(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 110) ;; Set the monospace font
+(set-face-attribute 'variable-pitch nil :family "Spectral" :height 130)      ;; Set the serif font
 
 
 ;; Replace the startup message with logging the initialization time
@@ -68,7 +68,9 @@
 
 (defun my-prog-mode-config ()
   (setq show-trailing-whitespace t)
-  (display-line-numbers-mode))
+  (display-line-numbers-mode)
+  (column-number-mode))
+
 (add-hook 'prog-mode-hook #'my-prog-mode-config)
 
 (use-package org
@@ -120,3 +122,8 @@
 
 ;; Show only one active window when opening multiple files at the same time.
 (add-hook 'window-setup-hook 'delete-other-windows)
+
+;; Screensaver on idle
+(use-package zone
+  :config
+  (zone-when-idle 120))

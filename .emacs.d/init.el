@@ -13,6 +13,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2c49d6ac8c0bf19648c9d2eabec9b246d46cb94d83713eaae4f26b49a8183fc4" default))
  '(org-agenda-files '("~/Documents/todo.org")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
