@@ -123,7 +123,8 @@
 ;; Show only one active window when opening multiple files at the same time.
 (add-hook 'window-setup-hook 'delete-other-windows)
 
-;; Screensaver on idle
-(use-package zone
+(use-package olivetti
+  :hook
+  text-mode
   :config
-  (zone-when-idle 120))
+  (olivetti-mode))

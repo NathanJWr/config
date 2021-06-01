@@ -34,5 +34,7 @@
 
 	  ;; Format c/c++
 	  (clang-format)
+
+	  (olivetti :type git :host github :commit 4a0719021625ece4def8f18d28f86a681bee7d28)
 	  )
 	)
