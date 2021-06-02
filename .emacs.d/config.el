@@ -6,10 +6,30 @@
 (tool-bar-mode -1)   ;; Don't show the toolbar
 (scroll-bar-mode -1) ;; Don't show the scroll bar
 
-;; Set fonts
-(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 110)
-(set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 110) ;; Set the monospace font
-(set-face-attribute 'variable-pitch nil :family "Spectral" :height 130)      ;; Set the serif font
+(defmacro with-system (type &rest body)
+  "Evaluate BODY if `system-type' equals TYPE."
+  (declare (indent defun))
+  `(when (eq system-type ',type)
+     ,@body))
+
+;; Make the text a bit larger on MacOS
+(with-system darwin
+  ;; Set the default font
+  (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 140)
+  ;; Set the monospace font
+  (set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 140)
+   ;; Set the serif font
+  (set-face-attribute 'variable-pitch nil :family "Spectral" :height 150))
+
+(with-system windows-nt
+  ;; Set the default font
+  (set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 110)
+  ;; Set the monospace font
+  (set-face-attribute 'fixed-pitch nil :family "DejaVu Sans Mono" :height 110)
+   ;; Set the serif font
+  (set-face-attribute 'variable-pitch nil :family "Spectral" :height 130))
+
+
 
 
 ;; Replace the startup message with logging the initialization time
