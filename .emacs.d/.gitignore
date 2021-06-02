@@ -8,3 +8,6 @@ bookmarks
 *.db
 recentf
 transient/
+projectile*
+eshell*
+recentf*
