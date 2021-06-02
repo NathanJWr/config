@@ -30,7 +30,9 @@
   (set-face-attribute 'variable-pitch nil :family "Spectral" :height 130))
 
 (with-system windows-nt
-  (start-process "autohotkey" nil "autohotkey" (expand-file-name (concat user-emacs-directory "capslock.ahk"))))
+  (start-process "autohotkey" nil "autohotkey"
+		 (expand-file-name
+		  (concat user-emacs-directory "capslock.ahk"))))
 
 
 
