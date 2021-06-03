@@ -1,3 +1,5 @@
+(load "~/.emacs.d/util.el")
+
 ;; Some basic stuff
 (setq default-buffer-file-coding-system 'utf-8-unix)
 (setq inhibit-splash-screen t    ;; No default splash screen
@@ -5,12 +7,6 @@
 
 (tool-bar-mode -1)   ;; Don't show the toolbar
 (scroll-bar-mode -1) ;; Don't show the scroll bar
-
-(defmacro with-system (type &rest body)
-  "Evaluate BODY if `system-type' equals TYPE."
-  (declare (indent defun))
-  `(when (eq system-type ',type)
-     ,@body))
 
 ;; Make the text a bit larger on MacOS
 (with-system darwin
@@ -54,9 +50,13 @@
 (setq backup-by-copying t)
 
 (setq delete-old-versions t
-      kept-new-versions 6 ;; Keep 6 new versions when a new numbered backup is made
-      kept-old-versions 2 ;; Keep 2 old versions when a new numbered backup is made
-      version-control t)  ;; Make numeric backup versions
+      ;; Keep 6 new versions when a new numbered backup is made
+      kept-new-versions 6
+      ;; Keep 2 old versions when a new numbered backup is made
+      kept-old-versions 2
+      ;; Make numeric backup versions
+      version-control t)
+
 
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
@@ -115,7 +115,14 @@
 (use-package ispell
   :config
   (setq ispell-local-dictionary-alist
-      '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+	'(("en_US"
+	   "[[:alpha:]]"
+	   "[^[:alpha:]]"
+	   "[']"
+	   nil
+	   ("-d" "en_US")
+	   nil
+	   utf-8)))
   (setq ispell-hunspell-dictionary-alist ispell-local-dictionary-alist))
 
 (use-package centaur-tabs
@@ -129,7 +136,7 @@
 (use-package projectile
   :config
   (projectile-mode +1)
-  (setq projectile-project-search-path '("~/projects/"))
+  (setq projectile-project-search-path '("~/Projects/"))
   :bind
   ("C-c p" . 'projectile-command-map))
 
