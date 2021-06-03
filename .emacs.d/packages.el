@@ -3,6 +3,9 @@
 	  ;; Good package of themes
 	  (doom-themes :type git :host github :commit 4199e74db170200995ee8dfbb55ffae004d6e219)
 
+	  ;; Make the modeline pretty
+	  (doom-modeline :type git :host github :commit 0e9827115918752ad5ac57c016755b91d551e4aa)
+
 	  ;; Profile startup times
 	  (esup :type git :host github :commit fa1413737b8d5173a4db8c18d8de9ac798365d53)
 

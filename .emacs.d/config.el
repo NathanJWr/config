@@ -60,6 +60,9 @@
 
 ;; Load a default theme
 (load-theme 'doom-gruvbox-light t)
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode 1))
 
 ;; Ivy completion framework
 (use-package ivy
