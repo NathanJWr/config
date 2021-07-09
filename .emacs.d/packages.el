@@ -77,4 +77,9 @@
 	  (olivetti
 	   :type git
 	   :host github
-	   :commit 4a0719021625ece4def8f18d28f86a681bee7d28)))
+	   :commit 4a0719021625ece4def8f18d28f86a681bee7d28)
+
+	  (php-mode
+	   :type git
+	   :host github
+	   :commit cbf27232649c39e3749eefd23f962750bd249a49)))
