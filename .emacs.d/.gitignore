@@ -1,5 +1,4 @@
 auto-save-list/
-straight/
 url/
 *~
 server/
@@ -11,3 +10,11 @@ transient/
 projectile*
 eshell*
 recentf*
+straight/build
+straight/build-cache.el
+straight/repos
+#recentf#
+*cache
+*session*
+tramp
+projects
